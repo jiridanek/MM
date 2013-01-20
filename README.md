@@ -115,7 +115,7 @@ Z následujícího grafu je je možno dovodit, že výše uvedený úhel může 
 
 Na histogramu je vidět, že pro velikost úhlu existuji dvě v porovnání s ostatními zřetelně nejčetnější hodnoty.
 
-<img src="http://jirkadanek.github.com/MM/histogram.png" width="100%">
+<img src="http://jirkadanek.github.com/MM/hist.png" width="100%">
 
 ### Energetická bariéra
 
