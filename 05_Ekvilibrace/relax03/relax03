@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sander -O -i relax03.in -p ../$PEQUI_TOP -c ../relax02/relax02.rst7 -o relax03.out -r relax03.rst7 -x relax03.btraj
+

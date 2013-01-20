@@ -1,0 +1,6 @@
+#!/usr/bin/env infinity-env
+
+module add amber
+
+sander -O -i prod.in -p output.parm7 -c relax03.rst7 -o prod.out -r prod.rst7 -x prod.btraj
+

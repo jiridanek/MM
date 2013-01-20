@@ -1,0 +1,8 @@
+# nacteni parametru siloveho pole (GAFF)
+source leaprc.gaff
+# nacteni chybejicich parametru
+loadamberparams output.frcmod
+# nacteni templatu se strukturou chorismatu
+LIG = loadmol2 output.mol2
+# ulozeni topologie a souradnic
+saveamberparm LIG output.parm7 output.rst7

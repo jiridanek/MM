@@ -1,0 +1,53 @@
+#!/bin/bash
+##!/usr/bin/env infinity-env
+# DO NOT CHANGE LINE BELOW ----------------------------------------------------
+# INFINITY JobType=pequi
+# DO NOT CHANGE LINE ABOVE ----------------------------------------------------
+# =============================================================================
+
+# equilibration procedure: vac01
+# small molecule in vacuum
+
+# input topology --------------------------------------------------------------
+# file name without path, this file has to be presented in working directory
+export PEQUI_TOP="output.parm7"
+
+# input coordinates -----------------------------------------------------------
+# file name without path, this file has to be presented in working directory
+export PEQUI_CRD="output.rst7"
+
+# program to perform MD -------------------------------------------------------
+export MD_MODULE="amber"
+
+#------------------------------------------------------------------------------
+# THIS IS EXECUTION PART, PLEASE DO NOT CHANGE IT !! ==========================
+#------------------------------------------------------------------------------
+
+# do not execute if some parameter is specified
+# this is used by INFINITY autodetection plugin
+
+if [ $# -ne 0 ]; then
+   exit 0
+fi
+
+# activate MD module
+module add $MD_MODULE
+
+echo "EQUI: vac01 - small molecule in vacuum"
+
+for STAGE in `ls -d relax* |sort`; do
+    echo "*** Stage: $STAGE"
+    cd $STAGE
+    ./$STAGE
+    if [ $? -ne 0 ]; then
+          echo ""
+          echo " ERROR: Stage $STAGE was not completed!"
+          echo ""
+          cd ..
+          exit 1
+    fi
+    cd ..
+done
+
+echo ""
+

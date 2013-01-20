@@ -1,0 +1,21 @@
+#
+# relax01
+#
+# geometry optimization of all atoms
+#
+
+&cntrl
+ imin=1,
+ maxcyc=1000,
+ ncyc=1000,
+
+ ntpr=10,
+
+ ntf=1,
+ ntb=0,
+ cut=999,
+
+ ntc=1,
+
+&end
+
